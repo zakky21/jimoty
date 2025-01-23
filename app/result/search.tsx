@@ -56,7 +56,18 @@ export default function Component({ keyword, threshold, areas }: { keyword?: str
         <div className="flex items-center gap-2">
           {AREAS.map((area) => (
             <Fragment key={area.areaCd}>
-              <Checkbox id={area.areaCd} value={area.areaCd} checked={params.areas.some((p) => p === area.areaCd)} />
+              <Checkbox
+                id={area.areaCd}
+                value={area.areaCd}
+                checked={params.areas.some((p) => p === area.areaCd)}
+                onCheckedChange={(v) => {
+                  if (v) {
+                    setParams({ ...params, areas: [...params.areas, area.areaCd] });
+                  } else {
+                    setParams({ ...params, areas: params.areas.filter((p) => p != area.areaCd) });
+                  }
+                }}
+              />
               <label htmlFor={area.areaCd} className="text-xs">
                 {area.areaNm}
               </label>
