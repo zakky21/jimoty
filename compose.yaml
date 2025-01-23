@@ -1,0 +1,14 @@
+services:
+  next:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.node
+    ports: ['3000:3000']
+    volumes:
+      - .:/var/app
+      - pnpm-store:/var/app/.pnpm-store
+    environment:
+      - WATCHPACK_POLLING=true
+
+volumes:
+  pnpm-store:

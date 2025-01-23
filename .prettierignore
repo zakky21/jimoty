@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.nuxt/
+.astro/
+build/
+dist/
+out/
+public/
+components/ui
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+next.config.mjs
+tsconfig.json
+vercel.json
+postcss.config.mjs

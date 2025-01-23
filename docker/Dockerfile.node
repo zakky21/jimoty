@@ -1,0 +1,6 @@
+FROM node:20-alpine
+
+WORKDIR /var/app
+RUN npm install -g pnpm 
+
+CMD sh -c "pnpm install && pnpm dev"
